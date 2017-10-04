@@ -1,0 +1,43 @@
+body
+{
+	background: ##00b0ff;
+}
+
+h5
+{
+	font-weight: 400;
+}
+
+.container
+{
+	margin-top: 80px;
+	width: 400px;
+	height: 700px;
+}
+
+.tabs .indicator
+{
+	background-color: #00b0ff;
+	height: 60px;
+	opacity: 0.3;
+}
+
+.form-container
+{
+	padding: 40px;
+	padding-top: 10px;
+}
+
+.confirmation-tabs-btn
+{
+	position: absolute;
+}
+
+nav {
+  background-color: #00695c;
+}
+
+.material-icons
+{
+	font-size: 40px;
+}

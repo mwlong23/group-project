@@ -1,0 +1,69 @@
+<nav class=" waves-effect waves-light black">
+  <div class="nav-wrapper">
+    <a class="brand-logo center" href="/users/dashboard"><img class="logo" src="https://cdn-images-1.medium.com/max/1600/1*EK8I8k19h9V04NnyO59C_A.png"></a>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <li class="active"><a href="/users/dashboard">Home</a></li>
+        <li><a href="/users/user_profile">Profile</a></li>
+        <li><a href="/new_meetup">Create a meetup</a></li>
+        <li><a href="/logout">Logout</a></li>
+    </ul>
+  </div>
+</nav>
+
+
+<div class="container">
+<h3>Welcome, <%=@user.first_name%>!</h3>
+
+<a href="/logout">Log Out</a>
+<div class="progress">
+<div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+  </div>
+  <div class="alert alert-success hide"></div>
+  <form id="regiration_form" method="post" action="/profile" novalidate>
+  <fieldset>
+  	<h2> Step 1: Add Personnel Details</h2>
+
+    <div class="form-group">
+    	<label for="birthday">Birthday</label>
+     	<input type="date" name="birthday" class="datepicker">
+    </div>
+
+    <div class="form-group">
+	  <select class="browser-default" name="gender">
+	    <option value="" disabled selected>Choose your gender</option>
+	    <option value="male">Male</option>
+	    <option value="female">Female</option>
+	    <option value="neutral">Neutral</option>
+	  </select>
+
+	  </div>
+    <div class="form-group">
+    	<label for="zipcode">Zip</label>
+    	<input type="text" name="zip" id="zip">
+    </div>
+
+    <input type="button" class="next btn btn-info" value="Next" />
+  </fieldset>
+  </fieldset>
+  <fieldset>
+  	<h2> Step 2: About me</h2>
+
+     <div class="form-group">
+      <label for="bio">Tell us something about yourself</label>
+      <textarea class="form-control" rows="2" name="bio"></textarea>
+    </div>
+
+    <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
+    <input type="button" name="next" class="next btn btn-info" value="Next" />
+  </fieldset>
+  <fieldset>
+    <h2>Step 3: Upload pic or choose avtar</h2>
+    <div class="form-group">
+      <label for="file">Upload profile picture</label>
+     <input type="file" name="fileToUpload" id="fileToUpload">
+	</div>
+    <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
+    <input type="submit" name="submit" class="submit btn btn-success" value="Submit" />
+  </fieldset>
+  </form>
+</div>

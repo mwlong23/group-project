@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Study Buddy</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <link rel="stylesheet" href="/css/styles.css">
+    <script type="text/javascript" src="/js/materialize.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/additional-methods.js"></script>
+    <script type="text/javascript" src="/js/scripts.js"></script>
+
+
+
+  </head>
+  <body>
+    <nav class=" waves-effect waves-light black">
+      <div class="nav-wrapper">
+        <a class="brand-logo center" href="/users/dashboard"><img class="logo" src="https://cdn-images-1.medium.com/max/1600/1*EK8I8k19h9V04NnyO59C_A.png"></a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li class="active"><a href="/users/dashboard">Home</a></li>
+            <li><a href="/users/user_profile">Profile</a></li>
+            <li><a href="/new_meetup">Create a meetup</a></li>
+            <li><a href="/logout">Logout</a></li>
+        </ul>
+      </div>
+    </nav>
+    <main>
+      <%= yield %>
+    </main>
+    <footer class="page-footer green">
+       <div class="row">
+         <div class="col l6 s12">
+           <h5 class="white-text">MeetUp Clone</h5>
+           <a href="/create" class="grey-text text-lighten-3" id="create">Create a MeetUp</a>
+           <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+         </div>
+         <div class="col l4 offset-l2 s12">
+           <h5 class="white-text">Links</h5>
+           <ul>
+             <li><a class="grey-text text-lighten-3" href="/about">About Us</a></li>
+             <li><a class="grey-text text-lighten-3" href="/find">Find A MeetUp</a></li>
+             <li><a class="grey-text text-lighten-3" href="/careers">Careers</a></li>
+             <li><a class="grey-text text-lighten-3" href="/contact">Contact Us</a></li>
+           </ul>
+         </div>
+       </div>
+     <div class="footer-copyright">
+       © 2017 Epicodus
+     </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,57 @@
+
+
+
+
+<div class="container">
+  <div class="container white z-depth-2">
+  	<ul class="tabs green">
+  		<li class="tab col s3"><a class="white-text active" href="#login">login</a></li>
+  	</ul>
+
+  <div  id="register" class="col s12">
+    <form id="register-form" action="/registrations/signup" method="post" class="col s12">
+      <div class="form-container">
+        <h3 class="green-text">Welcome</h3>
+        <div class="row">
+          <div class="input-field col s6">
+            <input id="first_name" name ="first_name"  type="text" class="validate" required>
+            <label for="first_name">First Name</label>
+          </div>
+          <div class="input-field col s6">
+            <input id="last_name" name="last_name" type="text" class="validate" required>
+            <label for="last_name">Last Name</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="email" name="email" type="email" class="validate" required>
+            <label for="email">Email</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="email-confirm" name="email_confirm" type="email" class="validate" required>
+            <label for="email-confirm">Email Confirmation</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="password" name="password" type="password" minlength="5" class="validate" required>
+            <label for="password">Password</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="password-confirm" name="password_confirm" minlength="5" type="password" class="validate" required>
+            <label for="password-confirm">Password Confirmation</label>
+          </div>
+        </div>
+        <br>
+        <center>
+          <button class="btn waves-effect waves-light green" id="submit-button" type="submit" name="action">Submit</button>
+        </center>
+      </div>
+    </form>
+
+  </div>
+</div>
