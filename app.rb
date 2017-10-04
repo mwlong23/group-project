@@ -2,6 +2,7 @@ require("sinatra")
 require("sinatra/reloader")
 require("sinatra/activerecord")
 also_reload("lib/**/*.rb")
+require ('./lib/meetup')
 require("./lib/user")
 require("./lib/login")
 require('./lib/profile')
@@ -62,12 +63,21 @@ get('/sessions/logout')do
   erb(:'users/index')
 end
 
-get('')do
-  erb(:subjects)
+get('/new_meetup')do
+  @user = User.find(session[:id])
+  erb(:new_meetup)
 end
 
-get('')do
-  erb(:subject_detail)
+post('/new_meetup') do
+  binding.pry
+  @user = User.find(session[:id])
+  @meetup = Meetup.create(name: params['name'], catagory: params['category'], zip: params['zip'], street: params['street'], city: params['city'], state: params['state'], description: params['desc'])
+  redirect(:'/users/home')
+end
+
+get('users/user_profile')do
+  @user = User.find(session[:id])
+  erb(:user_profile)
 end
 
 get('')do
