@@ -76,8 +76,9 @@ post('/new_meetup') do
   redirect(:'/users/home')
 end
 
-get('')do
-  erb(:subject_detail)
+get('users/user_profile')do
+  @user = User.find(session[:id])
+  erb(:user_profile)
 end
 
 get('')do
