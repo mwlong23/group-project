@@ -1,28 +1,28 @@
 
 <div class="container">
-<div class="container-fluid bg-1 text-center">
-      <h3 class="margin"><%= @user.first_name%></h3>
-      <img src="https://static.pexels.com/photos/160699/girl-dandelion-yellow-flowers-160699.jpeg" class="img-responsive img-circle margin" style="display:inline" alt="Bird" width="350" height="350">
-      <h3><%= @profile.bio%></h3>
-    </div>
-    <div class="container-fluid2 bg-2">
-      <div class="me">
-          <button type="button"
-          class="btn btn-info btn-lg"
-    style="margin-left: 10px; color:#FF0000;">
-        <span class="glyphicon glyphicon-user">  <%= @user.first_name %></span></button><br><br>
-          <button type="button"
-          class="btn btn-info btn-lg"
-    style="margin-left: 10px; color:#FF0000;">
-        <span class="glyphicon glyphicon-envelope">  <%= @user.email %></span></button><br><br>
+  <div class="container-fluid bg-1 text-center">
+    <h3 class="margin"><%= @user.first_name%></h3>
+    <img src="https://static.pexels.com/photos/160699/girl-dandelion-yellow-flowers-160699.jpeg" class="img-responsive img-circle margin" style="display:inline" alt="Bird" width="350" height="350">
+    <h3><%= @profile.bio%></h3>
+  </div>
+  <div class="container-fluid2 bg-2">
+    <div class="me">
         <button type="button"
-          class="btn btn-info btn-lg"
-    style="margin-left: 10px; color:#FF0000;">
-        <span class=" glyphicon glyphicon-calendar">  <%= @profile.birthday %></span></button><br><br>
-          <button type="button"
-          class="btn btn-info btn-lg"
-    style="margin-left: 10px; color:#FF0000;">
-        <span class="glyphicon glyphicon-map-marker"> SEATTLE<%= @profile.zip %></span></button>
-      </div>
+        class="btn btn-info btn-lg"
+  style="margin-left: 10px; color:#FF0000;">
+      <span class="glyphicon glyphicon-user">  <%= @user.first_name %></span></button><br><br>
+        <button type="button"
+        class="btn btn-info btn-lg"
+  style="margin-left: 10px; color:#FF0000;">
+      <span class="glyphicon glyphicon-envelope">  <%= @user.email %></span></button><br><br>
+      <button type="button"
+        class="btn btn-info btn-lg"
+  style="margin-left: 10px; color:#FF0000;">
+      <span class=" glyphicon glyphicon-calendar">  <%= @profile.birthday %></span></button><br><br>
+        <button type="button"
+        class="btn btn-info btn-lg"
+  style="margin-left: 10px; color:#FF0000;">
+      <span class="glyphicon glyphicon-map-marker"> SEATTLE<%= @profile.zip %></span></button>
     </div>
   </div>
+</div>
