@@ -9,5 +9,9 @@
     <p>Where: </p>
     <p>People Attending: </p>
   </div>
-  <button class="btn waves-effect waves-light green" type="button">SignUp!</button>
+
+    <form action="/signup" method="post">
+      <input type="hidden" name="meetup_id" value="<%= meetup.id%>">
+      <button class="btn waves-effect waves-light green" type="button">SignUp!</button>
+  </form>
 </div>
