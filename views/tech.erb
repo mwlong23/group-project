@@ -2,14 +2,14 @@
 <h4>Find A Tech MeetUp Near You</h4>
 <div class="container">
   <% @meetups.each do |meetup| %>
-  <% if meetup.category == "tech" %>
+  <% if meetup.catagory == "tech" %>
     <div class="divider"></div>
       <div class="section">
         <h5> <%= meetup.name %> </h5>
         <p>What:  <%= meetup.description %>  </p>
         <p>When:  <%= meetup.day_time %> </p>
-        <p>Where:  <%= meetup.street %>, Seattle, WA  <%= meetup.zip %> </p>  
-        <p>People Attending: </p>
+        <p>Where:  <%= meetup.street %>, Seattle, WA  <%= meetup.zip %> </p>
+        <p>People attending: <%= @user.first_name %> </p>
         <form action="/signup" method="post">
           <input type="hidden" name="meetup_id" value="<%= meetup.id%>">
           <button class="btn waves-effect waves-light green" type="button">SignUp!</button>
