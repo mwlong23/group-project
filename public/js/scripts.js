@@ -1,7 +1,11 @@
 $(document).ready( function() {
+  $('.carousel').carousel();
    $('.datepicker').pickadate({
-    selectMonths: true, // Creates a dropdown to control month
-    selectYears: 15 // Creates a dropdown of 15 years to control year
+      selectMonths: true, // Creates a dropdown to control month
+      selectYears: 15 // Creates a dropdown of 15 years to control year
+    });
+    $('.carousel.carousel-slider').carousel({fullWidth: true});
+
   });
 
    var current = 1,current_step,next_step,steps;
