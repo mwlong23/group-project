@@ -1,9 +1,20 @@
 <h1>Outdoorsy MeetUps</h1>
-
-<div class="carousel">
-  <a class="carousel-item" href="#one!"><img src="https://lorempixel.com/250/250/nature/1"></a>
-  <a class="carousel-item" href="#two!"><img src="https://lorempixel.com/250/250/nature/2"></a>
-  <a class="carousel-item" href="#three!"><img src="https://lorempixel.com/250/250/nature/3"></a>
-  <a class="carousel-item" href="#four!"><img src="https://lorempixel.com/250/250/nature/4"></a>
-  <a class="carousel-item" href="#five!"><img src="https://lorempixel.com/250/250/nature/5"></a>
+<h4>Find An Outdoorsy MeetUp Near You</h4>
+<div class="container">
+  <% @meetups.each do |meetup| %>
+  <% if meetup.category == "outdoors" %>
+    <div class="divider"></div>
+      <div class="section">
+        <h5> <%= meetup.name %> </h5>
+        <p>What:  <%= meetup.description %>  </p>
+        <p>When:  <%= meetup.day_time %> </p>
+        <p>Where:  <%= meetup.street %>, Seattle, WA  <%= meetup.zip %> </p>
+        <p>People Attending: </p>
+        <form action="/signup" method="post">
+          <input type="hidden" name="meetup_id" value="<%= meetup.id%>">
+          <button class="btn waves-effect waves-light green" type="button">SignUp!</button>
+        </form>
+    </div>
+    <% end %>
+  <% end %>
 </div>

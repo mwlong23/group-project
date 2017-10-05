@@ -75,9 +75,11 @@ get('/users/user_profile') do
 end
 
 post('/new_meetup') do
-  binding.pry
+
   @user = User.find(session[:id])
-  @meetup = Meetup.create(name: params['name'], catagory: params['category'], zip: params['zip'], street: params['street'], city: params['city'], state: params['state'], description: params['desc'])
+  meetup = Meetup.new(name: params['name'], catagory: params['category'], zip: params['zip'],day_time: params['date'], street: params['street'], city: params['city'], state: params['state'], description: params['desc'])
+  meetup.save
+
   redirect(:'/users/home')
 end
 
@@ -91,19 +93,37 @@ get('/')do
 end
 
 get('/tech')do
+@user = User.find(session[:id])
+@meetups = Meetup.all
+binding.pry
   erb(:tech)
 end
 
 get('/cooking')do
+@user = User.find(session[:id])
+@meetups = Meetup.all
   erb(:cooking)
 end
 
 get('/outdoors')do
+@user = User.find(session[:id])
+  @meetups = Meetup.all
   erb(:outdoors)
 end
 
 get('/gaming')do
+@user = User.find(session[:id])
+@meetups = Meetup.all
   erb(:gaming)
+end
+
+post('/signup') do
+  @user = User.find(session[:id])
+ @meet_up = Meetup.find(params["meetup_id"])
+ if (!@meet_up.users.include? @user)
+     @meet_up.users.push(@user)
+ end
+ redirect back
 end
 
 get('/about')do
