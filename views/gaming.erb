@@ -1,1 +1,26 @@
 <h1>Gaming MeetUps</h1>
+<h4>Find A Gaming MeetUp Near You</h4>
+<div class="container">
+  <% @meetups.each do |meetup| %>
+  <% if meetup.category == "gaming" %>
+    <div class="divider"></div>
+      <div class="section">
+        <h5> <%= meetup.name %> </h5>
+        <p>What:  <%= meetup.description %>  </p>
+        <p>When:  <%= meetup.day_time %> </p>
+        <p>Where:  <%= meetup.street %>, Seattle, WA  <%= meetup.zip %> </p>
+             <% meetup.users.each do |user| %>
+             <!-- <div class="chip"> -->
+               <!-- <img src="http://4vector.com/i/free-vector-persona-avatar-2_098562_persona_Avatar_2.png" alt="Contact Person"> -->
+               <%= user.user_name %>
+             <!-- </div> -->
+           <% end %>
+
+        <form action="/signup" method="post">
+          <input type="hidden" name="meetup_id" value="<%= meetup.id%>">
+          <button class="btn waves-effect waves-light green" type="button">SignUp!</button>
+        </form>
+    </div>
+    <% end %>
+  <% end %>
+</div>
