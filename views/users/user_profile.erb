@@ -15,24 +15,39 @@
 
     <h3><%= @profile.bio%></h3>
   </div>
-  <div class="container-fluid2 bg-2">
-    <div class="me">
-        <button type="button"
+</div>
+
+
+<div class="row">
+
+  <div class="container-fluid bg-2">
+      <div class="col s8">
+      <button type="button"
         class="btn btn-info btn-lg"
-  style="margin-left: 10px; color:#green;">
+  style="margin-left: 10px; color:#FF0000; width: 50%">
       <span class="glyphicon glyphicon-user">  <%= @user.first_name %></span></button><br><br>
         <button type="button"
         class="btn btn-info btn-lg"
-  style="margin-left: 10px; color:#green;">
+  style="margin-left: 10px; color:#FF0000; width: 50%">
       <span class="glyphicon glyphicon-envelope">  <%= @user.email %></span></button><br><br>
       <button type="button"
         class="btn btn-info btn-lg"
-  style="margin-left: 10px; color:#green;">
+  style="margin-left: 10px; color:#FF0000; width: 50%">
       <span class=" glyphicon glyphicon-calendar">  <%= @profile.birthday %></span></button><br><br>
         <button type="button"
         class="btn btn-info btn-lg"
-  style="margin-left: 10px; color:#green;">
-      <span class="glyphicon glyphicon-map-marker"> SEATTLE<%= @profile.zip %></span></button>
+  style="margin-left: 10px; color:#FF0000; width: 50%">
+      <span class="glyphicon glyphicon-map-marker"> SEATTLE,<%= @profile.zip %></span></button>
+    </div>
+    <div class="col s4" style="float: right;">
+
+      <%@user.meetups.each do |meetup| %>
+      <div class="chip" style="float: right;">
+        <img src="https://cdn-images-1.medium.com/max/1600/1*EK8I8k19h9V04NnyO59C_A.png" alt="Contact Person">
+        <%= meetup.name %>
+      </div>
+    <% end %>
     </div>
   </div>
+</div>
 </div>
