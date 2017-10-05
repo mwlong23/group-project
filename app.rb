@@ -96,7 +96,7 @@ end
 get('/tech')do
 @user = User.find(session[:id])
 @meetups = Meetup.all
-binding.pry
+
   erb(:tech)
 end
 
