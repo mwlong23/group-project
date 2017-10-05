@@ -75,9 +75,9 @@ get('/users/user_profile') do
 end
 
 post('/new_meetup') do
-  binding.pry
+  # binding.pry
   @user = User.find(session[:id])
-  @meetup = Meetup.create(name: params['name'], catagory: params['category'], zip: params['zip'], street: params['street'], city: params['city'], state: params['state'], description: params['desc'])
+  @meetup = Meetup.create(name: params['name'], category: params['category'], zip: params['zip'], street: params['street'], city: params['city'], state: params['state'], description: params['desc'])
   redirect(:'/users/home')
 end
 
