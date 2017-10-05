@@ -84,3 +84,23 @@ end
 get('/')do
   erb(:register)
 end
+
+get('/tech')do
+  erb(:tech)
+end
+
+get('/cooking')do
+  erb(:cooking)
+end
+
+get('/outdoors')do
+  erb(:outdoors)
+end
+
+get('/gaming')do
+  erb(:gaming)
+end
+
+get('/about')do
+  erb(:about)
+end
