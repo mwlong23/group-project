@@ -3,11 +3,12 @@
  <h1 class="display-3">Food & Drink Meetups</h1>
  <h3 style="background-color: #ffafaf;" class="lead"><bold><i>Find out what's happening in Food & Drink Meetup groups around the world and start meeting up with the ones near you.</h3>
 </div>
+<br> <br>
      <% @meetups.each do |meetup| %>
      <%if meetup.category == "gaming" %>
            <div class="row">
          <div class="col s5 m6">
-           <div class="card teal darken-1">
+           <div class="card green darken-1">
              <div class="card-content white-text">
                <span class="card-title"><%= meetup.name %></span>
                <p><b style="color: black;">About us:</b> <%= meetup.description %></p><br>
@@ -16,7 +17,7 @@
              </div>
              <div class="card-action">
                <a style="float: right;" href="#"><span class="glyphicon glyphicon-tag"><%= meetup.category %> </span></a>
-               <form action="/join" method="post">
+               <form action="/signup" method="post">
                  <input type="hidden" name="meetup_id" value="<%= meetup.id%>">
                  <button class="btn waves-effect waves-light teal" type="submit"><span class="glyphicon glyphicon-plus"> Join</span></button>
               </form>
