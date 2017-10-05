@@ -2,7 +2,7 @@
 <h4>Find A Cooking MeetUp Near You</h4>
 <div class="container">
   <% @meetups.each do |meetup| %>
-  <% if meetup.catagory == "cooking" %>
+  <% if meetup.category == "cooking" %>
     <div class="divider"></div>
       <div class="section">
         <h5> <%= meetup.name %> </h5>

@@ -77,16 +77,17 @@ end
 post('/new_meetup') do
 
   @user = User.find(session[:id])
-  meetup = Meetup.new(name: params['name'], catagory: params['category'], zip: params['zip'],day_time: params['date'], street: params['street'], city: params['city'], state: params['state'], description: params['desc'])
+  meetup = Meetup.new(name: params['name'], category: params['category'], zip: params['zip'],day_time: params['date'], street: params['street'], city: params['city'], state: params['state'], description: params['desc'])
   meetup.save
 
   redirect(:'/users/home')
 end
 
-get('users/user_profile')do
-  @user = User.find(session[:id])
-  erb(:user_profile)
-end
+# get('users/user_profile')do
+#   @user = User.find(session[:id])
+#   @profile = @user.profile
+#   erb(:user_profile)
+# end
 
 get('/')do
   erb(:register)
