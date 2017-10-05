@@ -69,6 +69,12 @@ get('/new_meetup')do
   erb(:new_meetup)
 end
 
+get('/users/user_profile') do
+  @user = User.find(session[:id])
+  @profile = @user.profile
+   erb :'users/user_profile'
+end
+
 post('/new_meetup') do
   binding.pry
   @user = User.find(session[:id])
