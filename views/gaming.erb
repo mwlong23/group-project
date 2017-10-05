@@ -1,13 +1,20 @@
 <h1>Gaming MeetUps</h1>
 <h4>Find A Gaming MeetUp Near You</h4>
 <div class="container">
-  <div class="divider"></div>
-  <div class="section">
-    <h5>Placeholder title</h5>
-    <p>What: </p>
-    <p>When: </p>
-    <p>Where: </p>
-    <p>People Attending: </p>
-  </div>
-  <button class="btn waves-effect waves-light green" type="button">SignUp!</button>
+  <% @meetups.each do |meetup| %>
+  <% if meetup.category == "gaming" %>
+    <div class="divider"></div>
+      <div class="section">
+        <h5> <%= meetup.name %> </h5>
+        <p>What:  <%= meetup.description %>  </p>
+        <p>When:  <%= meetup.day_time %> </p>
+        <p>Where:  <%= meetup.street %>, Seattle, WA  <%= meetup.zip %> </p>
+        <p>People Attending: </p>
+        <form action="/signup" method="post">
+          <input type="hidden" name="meetup_id" value="<%= meetup.id%>">
+          <button class="btn waves-effect waves-light green" type="button">SignUp!</button>
+        </form>
+    </div>
+    <% end %>
+  <% end %>
 </div>
