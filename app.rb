@@ -80,7 +80,7 @@ get('users/user_profile')do
   erb(:user_profile)
 end
 
-get('')do
+get('/')do
   erb(:register)
 end
 
