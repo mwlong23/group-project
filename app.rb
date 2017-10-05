@@ -44,7 +44,6 @@ post('/registrations/signup')do
 end
 
 get('/users/update_profile') do
-  # binding.pry
   @user = User.find(session[:id])
   erb (:'users/update_profile')
 end
