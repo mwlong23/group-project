@@ -10,21 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20171004181451) do
-=======
-ActiveRecord::Schema.define(version: 20171004184220) do
->>>>>>> dfb573b68a8c0c8b48bc3dbaf2bfc867c14c5ff6
+ActiveRecord::Schema.define(version: 20171005155051) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "dates", force: :cascade do |t|
-    t.date "date"
-    t.integer "meetup_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
 
   create_table "meetups", force: :cascade do |t|
     t.string "name"
@@ -36,6 +25,7 @@ ActiveRecord::Schema.define(version: 20171004184220) do
     t.integer "zip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "day_time"
   end
 
   create_table "meetups_users", force: :cascade do |t|
